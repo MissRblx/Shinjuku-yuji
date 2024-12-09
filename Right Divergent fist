@@ -1,0 +1,46 @@
+local assetId = 100373362630468 
+local soundId = "rbxassetid://0" -- Sound ID (replace if needed)
+
+-- Load the effect (Folder)
+local effect = game:GetObjects("rbxassetid://" .. assetId)[1]
+
+-- Create and play sound
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Parent = game.Workspace
+sound:Play()
+
+-- Ensure the effect was loaded properly
+if effect then
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        -- Wait for character parts to be loaded
+        local rightArm = character:WaitForChild("Right Arm")
+
+        if rightArm then
+            -- Parent the effect to the workspace
+            effect.Parent = workspace
+
+            -- Iterate through all parts in the folder and position them
+            for _, part in pairs(effect:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    -- Position the part relative to the right arm
+                    part.Position = rightArm.Position + Vector3.new(0, 0, 0) -- Adjust offset if necessary
+                    part.CanCollide = false -- Disable collision
+                    part.Anchored = false    -- Anchor parts to keep them in place
+
+                    -- Create a weld for each part
+                    local weld = Instance.new("Weld")
+                    weld.Part0 = rightArm -- The part you're welding to
+                    weld.Part1 = part -- The part you're welding
+                    weld.C0 = CFrame.new(0, 0, 0) -- Adjust as necessary
+                    weld.Parent = part -- Parent the weld to the part being welded
+                end
+            end
+        end
+    end
+end
+
+wait(1.9)
+
+effect:Destroy()
