@@ -27,7 +27,7 @@ if effect then
                     -- Position the part relative to the right arm
                     part.Position = leftArm.Position + Vector3.new(0, 0, 0) -- Adjust offset if necessary
                     part.CanCollide = false -- Disable collision
-                    part.Anchored = true    -- Anchor parts to keep them in place
+                    part.Anchored = false    -- Anchor parts to keep them in place
 
                     -- Create a weld for each part
                     local weld = Instance.new("Weld")
