@@ -145,3 +145,5 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/MissRblx/Camera-test/
 
 end
 end
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
