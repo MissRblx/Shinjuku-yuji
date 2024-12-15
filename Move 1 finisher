@@ -143,6 +143,24 @@ lefteffect:Destroy()
 righteffect:Destroy()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/MissRblx/Camera-test/refs/heads/main/Black%20Flashh'))()
 
+local url = "https://github.com/MissRblx/Shinjuku-yuji/blob/main/Kokusen_Five.mp3" -- example
+local fileName = "Kokusen_Five.mp3"  -- You can name the file however you want
+
+-- Always check and download the file
+if not isfile(fileName) then
+    writefile(fileName, game:HttpGet(url))
+end
+
+-- Create a sound object and play it
+local sound = Instance.new("Sound")
+sound.SoundId = getcustomasset(fileName)  -- Load from custom asset
+sound.Volume = 1  -- Set volume to desired level
+sound.Looped = false  -- Set to false to prevent looping
+sound.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") -- Parent to PlayerGui or Workspace
+
+-- Play the sound
+sound:Play()
+
 end
 end
 
