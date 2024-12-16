@@ -143,8 +143,8 @@ lefteffect:Destroy()
 righteffect:Destroy()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/MissRblx/Camera-test/refs/heads/main/Black%20Flashh'))()
 
-local url = "https://github.com/MissRblx/Shinjuku-yuji/blob/main/Kokusen_Five.mp3" -- example
-local fileName = "Kokusen_Five.mp3"  -- You can name the file however you want
+local url = "https://github.com/MissRblx/Sound/raw/refs/heads/main/Kokusen_One.mp3" -- example
+local fileName = "Kokusen_One.mp3"  -- You can name the file however you want
 
 -- Always check and download the file
 if not isfile(fileName) then
