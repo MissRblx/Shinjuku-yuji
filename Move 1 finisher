@@ -154,7 +154,7 @@ end
 -- Create a sound object and play it
 local sound = Instance.new("Sound")
 sound.SoundId = getcustomasset(fileName)  -- Load from custom asset
-sound.Volume = 8  -- Set volume to desired level
+sound.Volume = 16  -- Set volume to desired level
 sound.Looped = false  -- Set to false to prevent looping
 sound.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") -- Parent to PlayerGui or Workspace
 
